@@ -12,14 +12,14 @@ const feedbackForm = {
 
 
 form.addEventListener('input',throttle(onInputForm, 500));
-form.addEventListener('textarea', () => { 
-    feedbackForm[e.target.name] = messageTextarea.value;}
-);
+// form.addEventListener('textarea', () => { 
+//     feedbackForm[e.target.name] = messageTextarea.value;}
+// );
 
 
 function onInputForm(e){
     feedbackForm[e.target.name] = e.target.value;
-    console.log(feedbackForm[e.target.name])
+    // console.log(feedbackForm[e.target.name])
     // messageTextarea.value = feedbackForm.email;
     localStorage.setItem('feedback-form-state', JSON.stringify(feedbackForm));
 
@@ -47,7 +47,6 @@ function updateInput(){
         feedbackForm.email = emailInput.value;
         feedbackForm.message = messageTextarea.value;
 };
-console.log(feedbackForm)
 updateInput();
 
 // function createData() {
